@@ -1,0 +1,51 @@
+type Tip = 
+ record {
+   category: text;
+   priority: Priority;
+   "text": text;
+ };
+type Timestamp = int;
+type Priority = 
+ variant {
+   high;
+   low;
+   medium;
+ };
+type CategoryScores = 
+ record {
+   clarity: nat;
+   education: nat;
+   experience: nat;
+   formatting: nat;
+   keywords: nat;
+   skills: nat;
+ };
+type AnalysisSummary = 
+ record {
+   categoryScores: CategoryScores;
+   id: AnalysisId;
+   overallScore: nat;
+   snippet: text;
+   timestamp: Timestamp;
+ };
+type AnalysisResult = 
+ variant {
+   err: text;
+   ok: Analysis;
+ };
+type AnalysisId = nat;
+type Analysis = 
+ record {
+   categoryScores: CategoryScores;
+   id: AnalysisId;
+   overallScore: nat;
+   resumeText: text;
+   timestamp: Timestamp;
+   tips: vec Tip;
+ };
+service : {
+  analyzeResume: (resumeText: text) -> (AnalysisResult);
+  deleteAnalysis: (id: AnalysisId) -> (bool);
+  getAnalysis: (id: AnalysisId) -> (opt Analysis) query;
+  listAnalyses: () -> (vec AnalysisSummary) query;
+}

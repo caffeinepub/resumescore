@@ -1,0 +1,41 @@
+// Version: 1.0.0
+type AnalysisId__627167302 = Nat;
+type Analysis__841008833 =
+  {
+    categoryScores : CategoryScores__570280372;
+    id : AnalysisId__627167302;
+    overallScore : Nat;
+    resumeText : Text;
+    timestamp : Timestamp__301639476;
+    tips : [Tip__538663173]
+  };
+type CategoryScores__570280372 =
+  {
+    clarity : Nat;
+    education : Nat;
+    experience : Nat;
+    formatting : Nat;
+    keywords : Nat;
+    skills : Nat
+  };
+type Data__791452850<K, V> =
+  {var count : Nat__490723111; kvs : [var ?(K, V)]};
+type Internal__8484328<K, V> =
+  {children : [var ?Node__46230540<K, V>]; data : Data__791452850<K, V>};
+type Leaf__809889148<K, V> = {data : Data__791452850<K, V>};
+type Nat__490723111 = Nat__920180692;
+type Nat__920180692 = Nat;
+type Node__46230540<K, V> =
+  {#internal : Internal__8484328<K, V>; #leaf : Leaf__809889148<K, V>};
+type Priority__152842540 = {#high; #low; #medium};
+type Timestamp__301639476 = Int;
+type Tip__538663173 =
+  {category : Text; priority : Priority__152842540; text : Text};
+actor {
+  stable analyses :
+    {
+      var root : Node__46230540<AnalysisId__627167302, Analysis__841008833>;
+      var size : Nat__490723111
+    };
+  stable nextId : {var value : Nat}
+};

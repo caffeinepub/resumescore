@@ -1,0 +1,23 @@
+{
+  "overview": "Resume Scoring System — a web app for a web development event where users paste their resumes, get instant AI-powered scores across six categories (keywords, skills, experience, education, formatting, clarity), and receive actionable improvement tips. Includes history tracking so users can review past analyses.",
+  "features": [
+    "Resume text input with validation",
+    "AI-powered scoring engine (0-100 scale)",
+    "Six-category score breakdown with gauges",
+    "Actionable improvement tips with priority tags",
+    "Analysis history dashboard",
+    "Professional dark tech UI theme",
+    "Responsive design for all screen sizes"
+  ],
+  "category": "productivity",
+  "tags": [
+    "resume",
+    "scoring",
+    "career",
+    "productivity",
+    "web-dev-event",
+    "analysis",
+    "tips"
+  ],
+  "last_updated": "2026-04-09T09:21:02.919Z"
+}
